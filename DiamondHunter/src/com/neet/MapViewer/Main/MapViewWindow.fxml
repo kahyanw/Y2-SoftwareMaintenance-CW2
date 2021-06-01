@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="672.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.neet.MapViewer.Main.WindowController">
+
+
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#exit" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#resetItemLocation" text="Reset" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#showAbout" text="About" />
+                  <MenuItem mnemonicParsing="false" onAction="#showInstruction" text="Instruction" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </top>
+   <right>
+      <AnchorPane prefHeight="648.0" prefWidth="141.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane layoutY="1.0" prefHeight="641.0" prefWidth="100.0" style="-fx-background-color: white;">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="90.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="127.20000457763672" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="127.20000457763672" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="127.20000457763672" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="120.0" minHeight="10.0" prefHeight="127.20000457763672" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="111.99999542236327" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="60.0" minHeight="0.0" prefHeight="38.79996337890623" valignment="CENTER" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Pane id="pnAxeCoordinate" prefHeight="107.0" prefWidth="69.0" style="-fx-border-radius: 5px;" GridPane.rowIndex="4">
+                     <children>
+                        <Button alignment="CENTER" contentDisplay="TOP" layoutX="1.0" layoutY="5.0" mnemonicParsing="false" onMouseClicked="#addAxe" prefHeight="73.0" prefWidth="78.0" style="-fx-font-weight: 700; -fx-focus-traversable: false;" text="Axe">
+                           <graphic>
+                              <ImageView fitHeight="43.0" fitWidth="42.0" onMouseClicked="#addBoat" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@/Sprites/axe48.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="8.0" right="8.0" top="5.0" />
+                     </GridPane.margin>
+                  </Pane>
+                  <Pane id="pnBoatCoordinate" prefHeight="135.0" prefWidth="106.0" style="-fx-border-radius: 5px;" GridPane.rowIndex="3">
+                     <children>
+                        <Button alignment="CENTER" contentDisplay="TOP" layoutY="15.0" mnemonicParsing="false" onMouseClicked="#addBoat" prefHeight="75.0" prefWidth="79.0" style="-fx-font-weight: 700; -fx-focus-traversable: false;" text="Boat">
+                           <graphic>
+                              <ImageView fitHeight="46.0" fitWidth="46.0" onMouseClicked="#addBoat" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@/Sprites/boat48.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="8.0" right="8.0" top="10.0" />
+                     </GridPane.margin>
+                  </Pane>
+                  <Pane prefHeight="32.0" prefWidth="103.0" style="-fx-background-color: D8D8D8;" GridPane.rowIndex="8">
+                     <children>
+                        <Button layoutX="15.0" layoutY="10.0" prefHeight="26.0" prefWidth="67.0" style="-fx-background-radius: 20; -fx-font-family: Copperplate; -fx-background-color: #ffffff; -fx-font-size: 8;" text="Version 1.0.0" GridPane.columnIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </Pane>
+                  <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onMouseClicked="#undoItemPlacement" prefHeight="71.0" prefWidth="122.0" style="-fx-focus-traversable: false;" text="RESET" GridPane.rowIndex="5">
+                     <graphic>
+                        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@/icons/icons8-undo-64.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#saveItemLocation" prefHeight="71.0" prefWidth="124.0" style="-fx-focus-traversable: false;" GridPane.rowIndex="6">
+                     <graphic>
+                        <ImageView fitHeight="52.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@/icons/icons8-save-close-48.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#playGame" prefHeight="70.0" prefWidth="117.0" style="-fx-focus-traversable: false;" GridPane.rowIndex="7">
+                     <graphic>
+                        <ImageView fitHeight="49.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@/icons/icons8-play-64.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+      
+                              <Button mnemonicParsing="false" onMouseClicked="#addWater" prefHeight="50.0" prefWidth="51.0" style="-fx-focus-traversable: false;" GridPane.rowIndex="2">
+      
+                                 <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@/icons/water.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+      
+                              <Button alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onMouseClicked="#addGrass" prefHeight="50.0" prefWidth="51.0" style="-fx-focus-traversable: false;" translateX="2.0" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+      
+                                 <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" translateX="-3.0">
+                           <image>
+                              <Image url="@/icons/grass.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+      
+                              <Button mnemonicParsing="false" onMouseClicked="#addTree" prefHeight="50.0" prefWidth="51.0" GridPane.rowIndex="1">
+      
+                                 <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@/icons/tree.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+      
+                              <Button mnemonicParsing="false" onMouseClicked="#addDeadTree" prefHeight="50.0" prefWidth="51.0" translateX="2.0" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+      
+                                 <graphic>
+                        <ImageView fitHeight="36.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true" translateX="-1.0">
+                           <image>
+                              <Image url="@/icons/dead_tree.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Label style="-fx-font-weight: 700;" text="Landscape" translateX="-2.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>
