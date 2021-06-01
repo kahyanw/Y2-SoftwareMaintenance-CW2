@@ -1,0 +1,16 @@
+Diamond Hunter(vPre-1.0.0)-Kent
+-Implement Base Interface
+-File Structure
+
+Diamond Hunter(v0.1.1) -Kent
+-Implement Redesign GUI
+
+Diamond Hunter(v0.1.2) -Kent
+-Add tile File
+
+Diamond Hunter(v0.2.0) -Kahyan
+-Load Map
+-Draw Map on GUI
+
+Diamond Hunter(v0.2.1) -kent
+-add controller for button
