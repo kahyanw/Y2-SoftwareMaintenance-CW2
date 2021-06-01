@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.TilePane?>
+
+
+<TilePane id="tpTileMap" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#setItems" onMouseEntered="#highlightCursor" onMouseMoved="#highlightCursor" prefHeight="640.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.neet.MapViewer.TileMap.TileMapController" />
